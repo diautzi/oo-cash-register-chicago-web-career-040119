@@ -19,21 +19,21 @@ attr_accessor :items, :discount, :total, :last_transaction
     self.last_transaction = price * quantity
   end
 
-def apply_discount
-  if discount > 0
-   @total -= (@total * @discount / 100).to_i
-    return "After the discount, the total comes to $#{@total}."
-  else
-    return "There is no discount to apply."
+  def apply_discount
+    if discount > 0
+     @total -= (@total * @discount / 100).to_i
+      return "After the discount, the total comes to $#{@total}."
+    else
+      return "There is no discount to apply."
+    end
   end
-end
-
-def items
-  @items
-end
-
-def void_last_transaction
-  self.total = self.total - self.last_transaction
-end
+  
+  def items
+    @items
+  end
+  
+  def void_last_transaction
+    self.total = self.total - self.last_transaction
+  end
 
 end
